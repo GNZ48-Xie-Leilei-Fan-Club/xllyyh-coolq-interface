@@ -1,0 +1,13 @@
+version: "3"
+services:
+  coolq-http-api:
+    image: richardchien/cqhttp:latest
+    volumes:
+      - ./coolq:/home/user/coolq
+    ports:
+      - "9000:9000"
+      - "6700:6700"
+    environment:
+      COOLQ_URL: http://dlsec.cqp.me/cqp-full
+      CQHTTP_USE_WS: "true"
+      CQHTTPL_WS_PORT: 6700
